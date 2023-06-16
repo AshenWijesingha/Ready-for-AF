@@ -70,7 +70,7 @@ const App = () => {
 
 export default App;
 ```
-- In this example, we have a functional component called ```NavBar``` that returns a JSX element representing a navigation menu. The navigation menu is structured as an unordered list (```<ul>```) with several list items (```<li>```), each containing an anchor tag (```<a>````) representing a link to a different page or section of the app. You can modify the ```href``` attribute of the anchor tags to point to the appropriate URLs in your application.
+- In this example, we have a functional component called ```NavBar``` that returns a JSX element representing a navigation menu. The navigation menu is structured as an unordered list (```<ul>```) with several list items (```<li>```), each containing an anchor tag (```<a>```) representing a link to a different page or section of the app. You can modify the ```href``` attribute of the anchor tags to point to the appropriate URLs in your application.
 
 - In the ```App``` component, we render the ```NavBar``` component, followed by your other app content. The ```NavBar``` component will be displayed at the top of the app, and you can place the rest of your app's content below it.
 
