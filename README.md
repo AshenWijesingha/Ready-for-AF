@@ -7,6 +7,126 @@ Ready for Application Frameworks Module Final Examination.
 
 # Question 02 - Express JS  (20 Marks)
 
+1. Setup an express JS project.
+2. Use the JSON middleware.
+3. Install Mongoose.
+
+```bash
+npm install mongoose
+```
+
+4. Implement the following.
+
+```js
+const express = require('express');
+const mongoose = require('mongoose');
+
+const app = express();
+const port = 3000;
+
+app.use(express.json());
+
+mongoose.connect('mongodb://localhost:27017/university', {
+ useNewUrlParser: true,
+ useUnifiedTopology: true
+});
+```
+
+5. Implement the **db object** as follows.
+
+```js
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+ console.log('Connected to MongoDB database');
+});
+```
+
+6. Implement the student schema as follows.
+
+```js
+const studentSchema = new mongoose.Schema({
+ name: String,
+ studentId: String
+});
+```
+
+7. Implement the Student model as follows
+
+```js
+const Student = mongoose.model('Student', studentSchema);
+```
+
+8. Implement the get method for request all students.
+
+```js
+// Get all Students
+app.get('/api/Students', async (req, res) => {
+ const students = await Student.find();
+ res.status(200).json(students);
+});
+```
+
+9. Implement the get method to request only one student.
+
+```js
+// Get a single student
+app.get('/api/students/:id', async (req, res) => {
+ const student = await Student.findById(req.params.id);
+ res.status(200).json(student);
+});
+```
+
+10. Implement the post method to create a new student entry.
+
+```js
+// Create a new student
+app.post('/api/students', async (req, res) => {
+ const student = new Student({
+  name: req.body.name,
+  studentId: req.body.studentId
+ });
+ await student.save();
+ res.status(201).json(student);
+});
+```
+
+11. Implement the put method to update an existing student.
+
+```js
+// Update a student
+app.put('/api/students/:id', async (req, res) => {
+ const student = await Student.findByIdAndUpdate(req.params.id, {
+  name: req.body.name,
+  studentId: req.body.studentId
+ }, { new: true });
+ res.status(200).json(student);
+});
+```
+
+12.  Implement the delete method to delete a student.
+
+```js
+// Delete a student
+app.delete('/api/students/:id', async (req, res) => {
+ await Student.findByIdAndDelete(req.params.id);
+ res.status(204).json({ message: 'Student deleted' });
+});
+```
+
+13. Let’s run the app and test everything.
+
+```js
+app.listen(port, () => {
+ console.log(`Server listening on port ${port}`);
+});
+```
+
+14. Use postman to test the APIs.
+15. Use MongoDB Compass to see the database.
+16. Modify the code by introducing middleware to validate the requests.
+
+
 <hr>
 
 # Question 03 - Spring Boot  (20 Marks)
