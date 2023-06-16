@@ -1,7 +1,25 @@
 # Ready-for-AF
 Ready for Application Frameworks Module Final Examination.
 
-# React
+# Question 01 - Theory-based (10 Marks)
+
+<hr>
+
+# Question 02 - Express JS  (20 Marks)
+
+<hr>
+
+# Question 03 - Spring Boot  (20 Marks)
+
+<hr>
+
+# Question 04 - Practical based REST API  (25 Marks)
+
+<hr>
+
+# Question 05 - Frontend Development (25 Marks)
+
+## React
 
 - Create a simple "Hello World" app that displays a greeting message to the user.
 1. Start by creating a new React component called "Greeting".
@@ -317,3 +335,5 @@ export default App;
 - By using these components, you can enhance your app with a footer, cards for displaying products or services, customizable buttons, banners for promotional messages, and testimonials.
 
 - Remember to set up your React development environment and replace the content of the ```App.js``` file with the code provided.
+
+  <hr>
