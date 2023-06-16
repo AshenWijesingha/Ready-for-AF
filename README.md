@@ -101,6 +101,9 @@ export default NavBar;
 #### Home.js:
 
 ```jsx
+```
+
+```jsx
 import React from 'react';
 
 const Home = () => {
