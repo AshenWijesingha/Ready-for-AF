@@ -78,7 +78,7 @@ export default App;
 
   ### OR
 
-  #### NavBar.js:
+#### NavBar.js:
 
   ```jsx
   import React from 'react';
