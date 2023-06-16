@@ -166,3 +166,154 @@ export default App;
 
 <hr>
 
+- Try to implement the following components and follow the steps above
+1. Create a "Footer" component that displays a copyright message and links to your social media profiles.
+2. Create a "Card" component that displays an image, title, and description for a product or service.
+3. Create a "Button" component that displays a customizable button with different styles and sizes.
+4. Create a "Banner" component that displays a promotional message or call-to-action with a background image or colour.
+5. Create a "Testimonial" component that displays a quote, name, and photo for a customer testimonial or review
+
+#### Footer.js:
+
+```jsx
+import React from 'react';
+
+const Footer = () => {
+  return (
+    <footer>
+      <p>&copy; 2023 Your Website. All rights reserved.</p>
+      <div>
+        <a href="https://example.com">Facebook</a>
+        <a href="https://example.com">Twitter</a>
+        <a href="https://example.com">Instagram</a>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+```
+#### Card.js:
+
+```jsx
+import React from 'react';
+
+const Card = ({ imageSrc, title, description }) => {
+  return (
+    <div className="card">
+      <img src={imageSrc} alt={title} />
+      <h2>{title}</h2>
+      <p>{description}</p>
+    </div>
+  );
+};
+
+export default Card;
+```
+
+#### Button.js:
+
+```jsx
+import React from 'react';
+
+const Button = ({ text, style, size }) => {
+  const classNames = `button ${style} ${size}`;
+
+  return <button className={classNames}>{text}</button>;
+};
+
+export default Button;
+```
+
+#### Banner.js:
+
+```jsx
+import React from 'react';
+
+const Banner = ({ message, background }) => {
+  const bannerStyle = {
+    background: background,
+  };
+
+  return (
+    <div className="banner" style={bannerStyle}>
+      <p>{message}</p>
+    </div>
+  );
+};
+
+export default Banner;
+```
+
+#### Testimonial.js:
+
+```jsx
+import React from 'react';
+
+const Testimonial = ({ quote, name, photo }) => {
+  return (
+    <div className="testimonial">
+      <blockquote>{quote}</blockquote>
+      <p className="name">{name}</p>
+      <img src={photo} alt={name} />
+    </div>
+  );
+};
+
+export default Testimonial;
+```
+
+#### App.js:
+
+```jsx
+import React from 'react';
+import NavBar from './NavBar';
+import Footer from './Footer';
+import Home from './Home';
+import About from './About';
+import Contact from './Contact';
+import Card from './Card';
+import Button from './Button';
+import Banner from './Banner';
+import Testimonial from './Testimonial';
+
+const App = () => {
+  return (
+    <div>
+      <NavBar />
+      <Home />
+      {/* Your other app content goes here */}
+      <About />
+      <Contact />
+
+      <Card
+        imageSrc="product.jpg"
+        title="Product Title"
+        description="Product Description"
+      />
+
+      <Button text="Click Me" style="primary" size="small" />
+
+      <Banner message="Special Offer!" background="#f2f2f2" />
+
+      <Testimonial
+        quote="This product changed my life!"
+        name="John Doe"
+        photo="testimonial.jpg"
+      />
+
+      <Footer />
+    </div>
+  );
+};
+
+export default App;
+```
+
+- In this updated example, the ```Footer```, ```Card```, ```Button```, ```Banner```, and ```Testimonial``` components are created in separate files and imported into the ```App.js``` file. The ```NavBar```, ```Home```, ```About```, and ```Contact``` components from the previous example are also included.
+
+- Make sure to adjust the import paths if the component files are in different directories.
+
+- By using these components, you can enhance your app with a footer, cards for displaying products or services, customizable buttons, banners for promotional messages, and testimonials.
+
+- Remember to set up your React development environment and replace the content of the ```App.js``` file with the code provided.
