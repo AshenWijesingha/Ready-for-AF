@@ -95,7 +95,7 @@ export default App;
       );
     };
 
-export default NavBar;
+  export default NavBar;
   ```
 
 #### Home.js:
