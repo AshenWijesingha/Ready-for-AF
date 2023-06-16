@@ -96,12 +96,9 @@ export default App;
     };
 
 export default NavBar;
-```
+  ```
 
 #### Home.js:
-
-```jsx
-```
 
 ```jsx
 import React from 'react';
