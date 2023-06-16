@@ -15,6 +15,83 @@ Ready for Application Frameworks Module Final Examination.
 
 # Question 04 - Practical based REST API  (25 Marks)
 
+- Create a new directory for your new Express.js project and run the following command  inside that folder
+
+```bash
+npm install express body-parser –save
+```
+
+- This will install Express.js and Body Parser, which we will use to parse incoming requests.
+
+-  After, all you have to do is create a new file called, index.js and add the following code and save it.
+
+```js
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+const port = 3000;
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+let todos = [
+ { id: 1, text: 'Buy groceries', done: false },
+ { id: 2, text: 'Do laundry', done: true },
+];
+
+app.get('/api/todos', (req, res) => {
+ res.send(todos);
+});
+
+app.get('/api/todos/:id', (req, res) => {
+ const id = Number(req.params.id);
+ const todo = todos.find(todo => todo.id === id);
+ if (todo) {
+   res.send(todo);
+ } else {
+   res.status(404).send('Todo not found');
+ }
+});
+
+app.post('/api/todos', (req, res) => {
+ const { text, done } = req.body;
+ const id = todos.length + 1;
+ const todo = { id, text, done };
+ todos.push(todo);
+ res.send(todo);
+});
+
+app.put('/api/todos/:id', (req, res) => {
+ const id = Number(req.params.id);
+ const { text, done } = req.body;
+ const todo = todos.find(todo => todo.id === id);
+ if (todo) {
+   todo.text = text || todo.text;
+   todo.done = done || todo.done;
+   res.send(todo);
+ } else {
+   res.status(404).send('Todo not found');
+ }
+});
+
+app.delete('/api/todos/:id', (req, res) => {
+ const id = Number(req.params.id);
+ todos = todos.filter(todo => todo.id !== id);
+ res.send(`Todo with id ${id} has been deleted`);
+});
+
+app.listen(port, () => {
+ console.log(`Example app listening at http://localhost:${port}`);
+});
+```
+
+- Finally, run the file with the node command.
+
+```bash
+node index.js
+```
+
 <hr>
 
 # Question 05 - Frontend Development (25 Marks)
