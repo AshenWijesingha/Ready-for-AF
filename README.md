@@ -100,63 +100,63 @@ export default App;
 
 #### Home.js:
 
-```jsx
-import React from 'react';
-
-const Home = () => {
-  return <h1>Welcome to the Home Page!</h1>;
-};
-
-export default Home;
-```
+  ```jsx
+  import React from 'react';
+  
+  const Home = () => {
+    return <h1>Welcome to the Home Page!</h1>;
+  };
+  
+  export default Home;
+  ```
 
 #### About.js:
 
-```jsx
-import React from 'react';
-
-const About = () => {
-  return <h1>About Us</h1>;
-};
-
-export default About;
-```
+  ```jsx
+  import React from 'react';
+  
+  const About = () => {
+    return <h1>About Us</h1>;
+  };
+  
+  export default About;
+  ```
 
 #### Contact.js:
 
-```jsx
-import React from 'react';
-
-const Contact = () => {
-  return <h1>Contact Us</h1>;
-};
-
-export default Contact;
-```
+  ```jsx
+  import React from 'react';
+  
+  const Contact = () => {
+    return <h1>Contact Us</h1>;
+  };
+  
+  export default Contact;
+  ```
 
 #### App.js:
 
-```jsx
-import React from 'react';
-import NavBar from './NavBar';
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
-
-const App = () => {
-  return (
-    <div>
-      <NavBar />
-      <Home />
-      {/* Your other app content goes here */}
-      <About />
-      <Contact />
-    </div>
-  );
-};
-
-export default App;
-```
+  ```jsx
+  import React from 'react';
+  import NavBar from './NavBar';
+  import Home from './Home';
+  import About from './About';
+  import Contact from './Contact';
+  
+  const App = () => {
+    return (
+      <div>
+        <NavBar />
+        <Home />
+        {/* Your other app content goes here */}
+        <About />
+        <Contact />
+      </div>
+    );
+  };
+  
+  export default App;
+  ```
 
 - In this updated example, each page component (```Home```, ```About```, ```Contact```) is created in separate files and imported into the ```App.js``` file. The ```NavBar``` component is also created in a separate file and imported.
 
